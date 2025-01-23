@@ -134,11 +134,9 @@
           name="backyard-builder-leads"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="bot-field"
           class="space-y-6"
         >
-          <!-- Hidden anti-bot field -->
-          <input type="hidden" name="bot-field" />
+        
 
           <div>
             <label for="name" class="block text-gray-700 font-medium mb-2">
