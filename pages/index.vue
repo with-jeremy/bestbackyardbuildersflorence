@@ -117,77 +117,87 @@
           </p>
         </div>
       </section>
-  
-      <!-- ================= LEAD CAPTURE FORM ================= -->
-      <section id="quote-form" class="bg-white py-16 px-4">
-        <div class="container mx-auto max-w-xl bg-gray-100 shadow-lg p-8 rounded-md">
-          <h3 class="font-serif-custom text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
-            Get Your Free Quote
-          </h3>
-          <!-- For demonstration, using mailto. Replace with real form endpoint for production. -->
-          <form 
-            method="POST"
-            action="mailto:jeremy@withjeremy.com?subject=Backyard%20Builder%20Lead"
-            encType="text/plain"
-            class="space-y-6"
+   <!-- ================= LEAD CAPTURE FORM (Netlify) ================= -->
+   <section id="quote-form" class="bg-white py-16 px-4">
+      <div class="container mx-auto max-w-xl bg-gray-100 shadow-lg p-8 rounded-md">
+        <h3 class="font-serif-custom text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
+          Get Your Free Quote
+        </h3>
+
+        <!-- 
+          Netlify Forms configuration:
+          - data-netlify="true" for form handling
+          - netlify-honeypot="bot-field" to help filter spam
+          - name="backyard-builder-leads" to identify the form in Netlify's dashboard
+         -->
+        <form
+          name="backyard-builder-leads"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-6"
+        >
+          <!-- Hidden anti-bot field -->
+          <input type="hidden" name="bot-field" />
+
+          <div>
+            <label for="name" class="block text-gray-700 font-medium mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="Name"
+              required
+              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="Email"
+              required
+              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+          </div>
+          <div>
+            <label for="phone" class="block text-gray-700 font-medium mb-2">
+              Phone
+            </label>
+            <input
+              type="text"
+              id="phone"
+              name="Phone"
+              required
+              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+          </div>
+          <div>
+            <label for="project-details" class="block text-gray-700 font-medium mb-2">
+              What can we build for you?
+            </label>
+            <textarea
+              id="project-details"
+              name="Project Details"
+              rows="3"
+              required
+              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full border-2 border-gold text-white font-semibold py-3 rounded-full bg-gold hover:bg-white hover:text-green-800 transition text-xl"
           >
-            <div>
-              <label for="name" class="block text-gray-700 font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="Name"
-                required
-                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-            <div>
-              <label for="email" class="block text-gray-700 font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="Email"
-                required
-                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-            <div>
-              <label for="phone" class="block text-gray-700 font-medium mb-2">
-                Phone
-              </label>
-              <input
-                type="text"
-                id="phone"
-                name="Phone"
-                required
-                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-            <div>
-              <label for="project-details" class="block text-gray-700 font-medium mb-2">
-                What can we build for you?
-              </label>
-              <textarea
-                id="project-details"
-                name="Project Details"
-                rows="3"
-                required
-                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="w-full border-2 border-gold text-white font-semibold py-3 rounded-full bg-gold hover:bg-white hover:text-green-800 transition text-xl"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-      </section>
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
   
       <!-- ================= FOOTER ================= -->
       <footer class="bg-gray-800 text-white py-4 mt-auto">
